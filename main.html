@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>الشاشة الرئيسية</title>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+    <div dir="rtl" class="container">
+        
+        <div class="title">قائمة المهام
+            <p><span class="red">*</span>يمكنك الاطلاع على جميع تفاصيل المهام الخاص بكل الاقسام بالضغط عليها من الجدول ادناه</p>
+        </div>
+        
+  
+        <div class="filters">
+            <div class="input__box">
+                <input type="text" id="searchTaskName"  placeholder="بحث عن اسم المهمة">
+            </div>
+            <div class="input__box">
+                <input type="date" id="searchDate">
+            </div>
+            <div class="input__box">
+                <select id="searchAdmin">
+                    <option value="">اختر الاداره</option>
+                    <option value="التميز المؤسسي">التميز المؤسسي</option>
+                    <option value="مهام مكتب الوكيل">مهام مكتب الوكيل</option>
+                    <option value="تقنية المعلومات">تقنية المعلومات</option>
+                    <option value="الموارد البشرية">الموارد البشرية</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>الاداره</th>
+                    <th>اسم المهمة</th>
+                    <th>التاريخ</th>
+                    <th>تقرير المهمة</th>
+                    <th>تقرير الحاله</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Task Rows -->
+                <tr>
+                    <td>ادارة 1</td>
+                    <td>مهمة 1</td>
+                    <td>2024-07-29</td>
+                    <td><a href="reports/report1.pdf" download><i class="fas fa-download"></i></a></td>
+                    <td><i class="fas fa-check-circle completed"></i></td> <!-- Example status icon -->
+                </tr>
+                <tr>
+                    <td>ادارة 2</td>
+                    <td>مهمة 2</td>
+                    <td>2024-07-30</td>
+                    <td><a href="reports/report2.pdf" download><i class="fas fa-download"></i></a></td>
+                    <td><i class="fas fa-spinner in-progress"></i></td> <!-- Example status icon -->
+                </tr>
+                <tr>
+                    <td>ادارة 3</td>
+                    <td>مهمة 3</td>
+                    <td>2024-07-30</td>
+                    <td><a href="reports/report2.pdf" download><i class="fas fa-download"></i></a></td>
+                    <td><i class="fas fa-times-circle overdue"></i></td> <!-- Example status icon -->
+                </tr>
+                <!-- Add more tasks as needed -->
+            </tbody>
+        </table>
+    </div>
+    <script src="javascript/main.js"></script>
+</body>
+</html>

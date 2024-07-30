@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="user.css"> -->
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>صفحة المستخدم</title>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+    <div dir="rtl" class="container">
+        <button id="logoutButton"> طباعة ارشيف المهام </button>
+        <div class="title">مهامي
+            <p><span class="red">*</span>  يمكنك تقديم طلب بآكتمال المهمة بالضغط عليها من الجدول ادناه.</p>
+        </div>
+        <div class="filters">
+            <div class="input__box">
+                <input type="text" id="searchTaskName"  placeholder="بحث عن اسم المهمة">
+            </div>
+           
+         
+        </div>
+        <table id="userTaskTable">
+            <thead>
+                <tr>
+                    <th>اسم المهمة</th>
+                    <th>وقت المهمة</th>
+                    <th>تاريخ المهمة</th>
+                    <th>تفاصيل المهمة</th>
+                    <th>المرفقات </th>
+                    <th>تقرير المهمة</th> <!-- New column header -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Task Rows with Status Icons -->
+                <tr>
+                    <td><a href="submit.html?taskId=1">مهمة 1</a></td>
+                    <td>10:00 AM</td>
+                    <td>2024-07-29</td>
+                    <td>تفاصيل مهمة 1</td>
+                    <td><a href="reports/report2.pdf" download><i class="fas fa-download"></i></a></td>
+                    <td><i class="fas fa-check-circle completed"></i></td> <!-- Example status icon -->
+                </tr>
+                <tr>
+                    <td><a href="submit.html?taskId=2">مهمة 2</a></td>
+                    <td>11:00 AM</td>
+                    <td>2024-07-30</td>
+                    <td>تفاصيل مهمة 2</td>
+                    
+                    <td><a href="reports/report2.pdf" download><i class="fas fa-download"></i></a></td>
+                    <td><i class="fas fa-spinner in-progress"></i></td> <!-- Example status icon -->
+                </tr>
+                <tr>
+                    <td><a href="submit.html?taskId=3">مهمة 3</a></td>
+                    <td>12:00 PM</td>
+                    <td>2024-08-01</td>
+                    <td>تفاصيل مهمة 3</td>
+                    <td><a href="reports/report2.pdf" download><i class="fas fa-download"></i></a></td>
+                    <td><i class="fas fa-times-circle overdue"></i></td> <!-- Example status icon -->
+                </tr>
+            </tbody>
+        </table>
+        <div dir="rtl" class="submitted-tasks">
+            <div class="title">مهام العمل المكتملة</div>
+            <table id="submittedTaskTable">
+              <thead>
+                <tr>
+                    <th>اسم المهمة</th>
+                    <th>وقت المهمة</th>
+                    <th>تاريخ المهمة</th>
+                    <th>تفاصيل المهمة</th>
+                    <th>المرفقات</th>
+                    <th>الحالة</th>
+                   
+                    
+                </tr>
+              </thead>
+              <tbody>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td><a href="reports/report2.pdf" download><i class="fas fa-download"></i></a></td>
+                <td><i class="fas fa-check-circle completed"></i></td> <!-- Example status icon -->
+        
+              </tbody>
+            </table>
+          </div>
+    </div>
+</body>
+</html>

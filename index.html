@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام المهام</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+
+      const username = event.target.username.value;
+      const password = event.target.password.value;
+
+      // Simulated user data
+      const users = {
+        "admin": {
+          password: "adminpass",
+          role: "admin"
+        },
+        "user1": {
+          password: "user1pass",
+          role: "user"
+        },
+        "mainUser": {
+          password: "mainpass",
+          role: "main"
+        }
+      };
+
+      if (users[username] && users[username].password === password) {
+        // Redirect based on user role
+        switch (users[username].role) {
+          case "admin":
+            window.location.href = 'table.html';
+            break;
+          case "user":
+            window.location.href = 'user.html';
+            break;
+          case "main":
+            window.location.href = 'main.html';
+            break;
+          default:
+            alert('Role not recognized');
+        }
+      } else {
+        // Show an error message or handle validation failure
+        alert('من فضلك ادخل اسم المستخدم وكلمة المرور');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <img src="logo.jpg" alt="Logo" class="logo">
+  </div>
+  <div dir="rtl" class="box">
+    <h1>مرحبا</h1>
+    <form onsubmit="handleSubmit(event)">
+      <div class="input-box">
+        <input type="text" name="username" required />
+        <label for="">اسم المستخدم</label>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" required />
+        <label for="">كلمة المرور</label>
+      </div>
+      <input type="submit" value="تآكيد" />
+    </form>
+  </div>
+</body>
+</html>

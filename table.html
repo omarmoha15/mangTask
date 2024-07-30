@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="table.css">
+    
+    <title>قائمة المهام</title>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Logo" class="logo">
+      </div>
+    <div dir="rtl" class="container">
+        <button id="logoutButton"> طباعة ارشيف المهام </button>
+        <button id="addTaskButton">اضافة مهمة جديدة </button>
+        <div dir="rtl" class="task-list">
+          <div class="title">خيارات البحث 
+            <p><span class="red">*</span>الاطلاع على جميع مهام العمل المسنده وعرض التفاصيل الخاصة بها.</p>
+          </div>
+          <div class="filters">
+            <div class="input__box">
+                <input type="text" id="taskNameFilter" placeholder="بحث عن اسم المهمة">
+            </div>
+            <div class="input__box">
+                <select id="reportFilter">
+                    <option value="">اختر التقرير</option>
+                    <option value="تقرير 1">تقرير 1</option>
+                    <option value="تقرير 2">تقرير 2</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="input__box">
+                <select id="adminFilter">
+                    <option value="">اختر الاداره</option>
+                    <option value="التميز المؤسسي">التميز المؤسسي</option>
+                    <option value="مهام مكتب الوكيل">مهام مكتب الوكيل</option>
+                    <option value="تقنية المعلومات">تقنية المعلومات</option>
+                    <option value="الموارد البشرية">الموارد البشرية</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+    <div dir="rtl" class="task-list">
+        <div class="title">مهام العمل </div>
+        <table id="taskTable">
+          <thead>
+            <tr>
+              <th>اسم المهمة</th>
+              <th>تاريخ المهمة</th>
+              <th>تاريخ الانجاز</th>
+              <th>ملاحظة</th>
+              <th>التقرير</th>
+              <th>الحالة</th>
+            </tr>
+            
+          </thead>
+          <tbody>
+            <tr>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+           
+              <td><i class="fas fa-check-circle completed"></i></td> <!-- Example status icon -->
+              
+            </tr>
+            <tr>
+              <td>تجزبة</td>
+              <td>تجزبة</td>
+              <td>تجزبة</td>
+              <td>تجزبة</td>
+              <td>تجزبة</td>
+              <td><i class="fas fa-spinner in-progress"></i></td> <!-- Example status icon -->
+              </tr>
+              <tr>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td>تجزبة</td>
+                <td><i class="fas fa-times-circle overdue"></i></td> <!-- Example status icon -->
+                </tr>
+              
+          </tbody>
+        </table>
+      </div>
+  
+      <div dir="rtl" class="submitted-tasks">
+        <div class="title">مهام العمل المكتملة</div>
+        <table id="submittedTaskTable">
+          <thead>
+            <tr>
+                <th>اسم المهمة</th>
+                <th>وقت المهمة</th>
+                <th>تاريخ المهمة</th>
+                <th>ملاحظة</th>
+                <th>الحالة</th>
+               
+                
+            </tr>
+          </thead>
+          <tbody>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+            <td>تجزبة</td>
+            
+            <td><i class="fas fa-check-circle completed"></i></td> <!-- Example status icon -->
+    
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const taskNameFilter = document.getElementById("taskNameFilter");
+          const reportFilter = document.getElementById("reportFilter");
+          const adminFilter = document.getElementById("adminFilter");
+
+          const taskTable = document.getElementById("taskTable").getElementsByTagName("tbody")[0];
+          const rows = taskTable.getElementsByTagName("tr");
+
+          taskNameFilter.addEventListener("keyup", function() {
+              filterTable();
+          });
+
+          reportFilter.addEventListener("change", function() {
+              filterTable();
+          });
+
+          adminFilter.addEventListener("change", function() {
+              filterTable();
+          });
+
+          function filterTable() {
+              const taskNameValue = taskNameFilter.value.toLowerCase();
+              const reportValue = reportFilter.value.toLowerCase();
+              const adminValue = adminFilter.value.toLowerCase();
+
+              for (let i = 0; i < rows.length; i++) {
+                  const cells = rows[i].getElementsByTagName("td");
+                  const taskNameText = cells[0].textContent.toLowerCase();
+                  const reportText = cells[3].textContent.toLowerCase();
+                  const adminText = cells[4].textContent.toLowerCase();
+
+                  if ((taskNameText.includes(taskNameValue) || taskNameValue === "") && 
+                      (reportText.includes(reportValue) || reportValue === "") && 
+                      (adminText.includes(adminValue) || adminValue === "")) {
+                      rows[i].style.display = "";
+                  } else {
+                      rows[i].style.display = "none";
+                  }
+              }
+          }
+
+          // Add click event listener to the button
+          document.getElementById("addTaskButton").addEventListener("click", function() {
+              window.location.href = "ToDo.html";
+          });
+
+          // Add click event listener to each row in the taskTable
+          for (let i = 0; i < rows.length; i++) {
+              rows[i].addEventListener("click", function() {
+                  window.location.href = "details.html";
+              });
+          }
+      });
+  </script>
+</body>
+</html>

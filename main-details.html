@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main-details.css">
+    <link rel="stylesheet" href="ToDo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>تفاصيل المهمة</title>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+    <div dir="rtl" class="container">
+        <div class="title">تفاصيل المهمة</div>
+        <form id="taskForm">
+            <div class="user__details">
+                <div class="input__box">
+                    <span class="details">اسم المهمة</span>
+                    <input type="text" id="taskName" placeholder="" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">تفاصيل المهمة</span>
+                    <input type="text" id="taskDetails" placeholder="" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">جهة المسند</span>
+                    <select id="taskDepartment" required>
+                        <option value="" disabled selected>اختر جهة المسند</option>
+                        <option value="التميز المؤسسي">التميز المؤسسي</option>
+                        <option value="مهام مكتب الوكيل">مهام مكتب الوكيل</option>
+                        <option value="تقنية المعلومات">تقنية المعلومات</option>
+                        <option value="الموارد البشرية">الموارد البشرية</option>
+                        <!-- Add the rest of the 34 options here -->
+                    </select>
+                </div>
+                <div class="input__box">
+                    <span class="details">التوقيت</span>
+                    <input type="text" id="timePicker" placeholder="اختر التوقيت" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">تاريخ التكليف</span>
+                    <input type="date" id="assignmentDate" placeholder="اختر التاريخ" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">تاريخ الانجاز</span>
+                    <input type="date" id="completionDate" placeholder="اختر التاريخ" required>
+                </div>
+                <div class="input__box">
+                    
+                    <a href="#" id="downloadAttachment" download>
+                        <i class="fas fa-download"></i> تحميل المرفق
+                    </a>
+                </div>
+            </div>
+            <div class="gender__details">
+                <input type="radio" name="status" id="dot-1" value="منجزة">
+                <input type="radio" name="status" id="dot-2" value="جاري الانجاز">
+                <input type="radio" name="status" id="dot-3" value="متأخرة">
+                <span class="gender__title">التقرير</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span>منجزة</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span>جاري الانجاز</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span>متأخرة</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="العودة">
+                <a id="showRegisterForm" href="table.html">الاطلاع على جدول المهام!</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="main-details.js"></script>
+</body>
+</html>

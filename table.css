@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Cairo:wght@200..1000&family=El+Messiri:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+  }
+  
+  :root {
+    --main-blue: #71b7e6;
+    --main-purple: #9b59b6;
+    --main-grey: #ccc;
+    --sub-grey: #d9d9d9;
+  }
+  
+  body {
+   
+    height: 100vh;
+    justify-content: center; /*center vertically */
+    align-items: center; /* center horizontally */
+    background: #030306;
+      background: linear-gradient(135deg, #030306, #238D7B);
+    padding: 10px;
+  }
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(207, 207, 214);
+  cursor: pointer;
+}
+
+
+
+.container {
+  max-width: 9000px;
+  margin: 50px auto;
+  border-radius: 30px;
+  padding: 20px;
+  padding-bottom: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  color: #030306;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+p{
+  font-size: 15px;
+  color: #787887;
+}
+.container .red {
+  
+  color: #e74906;
+ 
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, #030306, #238D7B);
+  left: 0;
+  bottom: 0;
+}
+
+
+h1, h2 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+
+
+
+
+.form-group {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 120px;
+}
+
+table {
+  width: 100%;
+  border-radius: 30px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid rgb(49, 87, 85);
+  text-align: center;
+}
+
+th {
+  background-color: #212422;
+}
+td {
+    background-color: #68706b;
+   
+}
+.actions button {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions button:hover {
+    background-color: #45a049;
+}
+
+.actions button.delete {
+    background-color: #f44336;
+}
+
+.actions button i {
+    margin: 0;
+}
+  #logoutButton {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #238D7B;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  #addTaskButton {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #238D7B;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #logoutButton:hover {
+    background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+  }
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters .input__box {
+    width: calc(100% / 3 - 10px);
+}
+
+.filters .input__box input,
+.filters .input__box select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.completed {
+  color: #4CAF50; /* Green */
+  font-size: 20px;
+}
+
+.in-progress {
+  color: #FFC107; /* Yellow */
+  font-size: 20px;
+}
+
+.overdue {
+  color: #F44336; /* Red */
+  font-size: 20px;
+}

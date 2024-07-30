@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ToDo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>تفاصيل المهمة</title>
+</head>
+<body>
+    <div dir="rtl" class="container">
+        <div class="title">تفاصيل المهمة
+            <p><span class="red">*</span>صفحة الموافقة والتعديل علي المهام .</p>
+        </div>
+        <form action="#" method="post">
+            <div class="user__details">
+                <div class="input__box">
+                    <span class="details">اسم المهمة</span>
+                    <input type="text" placeholder="اسم المهمة" value="تجزبة" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">تفاصيل المهمة</span>
+                    <input type="text" placeholder="تفاصيل المهمة" value="تفاصيل المهمة هنا" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">جهة المسند</span>
+                    <select required>
+                        <option value="" disabled>اختر جهة المسند</option>
+                        <option value="التميز المؤسسي" selected>التميز المؤسسي</option>
+                        <option value="مهام مكتب الوكيل">مهام مكتب الوكيل</option>
+                        <option value="تقنية المعلومات">تقنية المعلومات</option>
+                        <option value="الموارد البشرية">الموارد البشرية</option>
+                        <!-- Add the rest of the 34 options here -->
+                    </select>
+                </div>
+                <div class="input__box">
+                    <span class="details">التوقيت</span>
+                    <input type="text" id="timePicker" placeholder="اختر التوقيت" value="14:00" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">تاريخ التكليف</span>
+                    <input type="text" id="datePicker1" placeholder="اختر التاريخ" value="2024-07-28" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">تاريخ الانجاز</span>
+                    <input type="text" id="datePicker2" placeholder="اختر التاريخ" value="2024-08-05" required>
+                </div>
+                <div class="input__box">
+                    <span class="details">اضافة مرفقات</span>
+                    <input type="file" required>
+                </div>
+            </div>
+            <div class="gender__details">
+                <input type="radio" name="status" id="dot-1" checked>
+                <input type="radio" name="status" id="dot-2">
+                <input type="radio" name="status" id="dot-3">
+                <span class="gender__title">التقرير</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span>منجزة</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span>جاري الانجاز</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span>متأخرة</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="حفظ التعديلات">
+                <a id="backToTable" href="table.html">العودة إلى قائمة المهام</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        flatpickr("#timePicker", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true
+        });
+        
+        flatpickr("#datePicker1", {
+            enableTime: false,
+            dateFormat: "Y-m-d",
+            locale: "ar"
+        });
+
+        flatpickr("#datePicker2", {
+            enableTime: false,
+            dateFormat: "Y-m-d",
+            locale: "ar"
+        });
+    </script>
+</body>
+</html>

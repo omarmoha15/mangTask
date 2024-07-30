@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="submit.css">
+   
+ 
+    
+    <title>صفحة تقديم المهمة</title>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+    <div dir="rtl" class="container">
+       
+        <div class="title">تقديم انجاز المهمة
+            <p><span class="red">*</span>  طلب تقديم باكتمال المهمة الموكلة.</p>
+        </div>
+        <form  action="#" method="post">
+            <div class="user__details">
+           <div class="input__box">
+                    <span class="details">اسم المهمة</span>
+                    <input type="text" placeholder="اسم المهمة" vrequired>
+                </div>
+                <div class="input__box">
+                    <span class="details">تفاصيل المهمة</span>
+                    <input type="text" placeholder="تفاصيل المهمة" required>
+                </div>
+            <div class="input__box">
+                <label for="completionDate">تاريخ الانجاز:</label>
+                <input type="date" id="completionDate" name="completionDate" required>
+            </div>
+            <div class="input__box">
+                <label for="attachment">اضافة مرفق:</label>
+                <input type="file" id="attachment" name="attachment">
+            </div>
+            
+            <div class="button">
+                <input type="submit" value="تقديم المهمة">
+                <a id="backToTable" href="user.html">العودة إلى  مهامي</a>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
